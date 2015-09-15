@@ -43,7 +43,7 @@
 
 
          <header-file src="src/ios/testPlugin.h" />
-         <source-file src="src/ios/testPlugin.h.m" />
+         <source-file src="src/ios/testPlugin.m" />
                   
      </platform>
 
