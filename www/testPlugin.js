@@ -21,7 +21,7 @@
 	var exec = require('cordova/exec');
 
 
-testJava = function(successCallback, errorCallback, arg) {
+exports.testJava = function(successCallback, errorCallback, arg) {
 	arg = arg || [];
     exec(successCallback, errorCallback, "TestFeature", "testJStoObjc", arg);
 };
