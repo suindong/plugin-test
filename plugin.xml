@@ -36,8 +36,8 @@
          <!-- ios -->
      <platform name="ios">
          <config-file target="config.xml" parent="/*">
-             <feature name="Test">
-                 <param name="ios-package" value="TestPlugin" />
+             <feature name="TestFeature">
+                 <param name="ios-package" value="testPlugin" />
              </feature>
          </config-file>
 

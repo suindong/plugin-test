@@ -1,13 +1,9 @@
-//
-//  testPlugin.h
-//  HelloWorld
-//
-//  Created by Dong on 2015/9/15.
-//
-//
-
-#import <Cordova/Cordova.h>
+#import <Cordova/CDVPlugin.h>
 
 @interface testPlugin : CDVPlugin
+
+
+-(void)testJStoObjc:(CDVInvokedUrlCommand *)Command;
+
 
 @end

@@ -1,4 +1,4 @@
-cordova.define("digiwin.cordova.plugin.test.testPlugin", function(require, exports, module) { /*
+/*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,14 +18,12 @@ cordova.define("digiwin.cordova.plugin.test.testPlugin", function(require, expor
  * under the License.
  *
 */
-//               var argscheck = require('cordova/argscheck'),
-               exec = require('cordova/exec'),
-//               Camera = require('./Camera');
+	var exec = require('cordova/exec');
 
 
-testJava = function(successCallback, errorCallback) {
-//               alert('haha');
-    exec(successCallback, errorCallback, "Test", "testJava", []);
+testJava = function(successCallback, errorCallback, arg) {
+	arg = arg || [];
+    exec(successCallback, errorCallback, "TestFeature", "testJStoObjc", arg);
 };
 
-});
+
