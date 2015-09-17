@@ -30,7 +30,7 @@
     <author>Derek Dong</author>
 
 <!--js-module用來代入你的js檔,src=路徑,id＋name=模塊名稱,clobbers=外部呼叫的名稱.-->
-    <js-module src="www/testPlugin.js" name="testPlugin">
+    <js-module src="www/testPlugin.js" name="testPlugin123">
         <clobbers target="test" />
     </js-module>
 
