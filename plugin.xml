@@ -57,8 +57,8 @@
          <source-file src="src/ios/testPlugin.m" />
          
          <!--需匯入的檔案-->
-         <resource-file src="appbeep.wav" />
-         
+<!--         <resource-file src="appbeep.wav" />-->
+
          <!--
          //靜態庫
          <source-file src="src/ios/libWikitudeSDK.a" framework="true" />
