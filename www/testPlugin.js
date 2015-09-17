@@ -1,5 +1,4 @@
 /*
- *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -18,12 +17,18 @@
  * under the License.
  *
 */
-	var exec = require('cordova/exec');
-
-
-exports.testJava = function(successCallback, errorCallback, arg) {
-	arg = arg || [];
+//require用來訪問其他模塊,exec用來執行與Native連結.
+var exec = require('cordova/exec');
+var testPlugin = function(){
+	//  this.param = XXX;
+}
+               
+testPlugin.prototype.testJava = function(successCallback, errorCallback, arg) {
+    arg = arg || [];//若無傳入值，預設為[]
+    //exec需傳入5個參數，分別為成功時回傳、失敗時回傳、功能名稱feature name、Native的method、參數(需為array)
     exec(successCallback, errorCallback, "TestFeature", "testJStoObjc", arg);
 };
-
-
+               
+testplugin = new testPlugin();
+//module.exports = 類別的實例 
+module.exports = testplugin;

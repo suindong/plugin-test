@@ -21,7 +21,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="digiwin.cordova.plugin.test"
-    version="0.0.2-dev">
+    version="0.0.3-dev">
     <name>Test</name>
     <description>Cordova Test Plugin</description>
     <license>Apache 2.0</license>
@@ -29,23 +29,44 @@
     <repo>https://github.com/suindong/plugin-test.git</repo>
     <author>Derek Dong</author>
 
+<!--js-module用來代入你的js檔,src=路徑,id＋name=模塊名稱,clobbers=外部呼叫的名稱.-->
     <js-module src="www/testPlugin.js" name="testPlugin">
         <clobbers target="test" />
     </js-module>
 
+<!--每個平台需要自定義自己的platform-->
          <!-- ios -->
      <platform name="ios">
          <config-file target="config.xml" parent="/*">
+             <!--feature name = js檔呼叫時的名稱-->
              <feature name="TestFeature">
+                 <!--value = 呼叫的類別名稱-->
                  <param name="ios-package" value="testPlugin" />
              </feature>
          </config-file>
+         
+         <!-- 可修改plist -->
+         <config-file target="*-Info.plist" parent="UIBackgroundModes">
+             <array>
+                 <string>audio</string>
+             </array>
+         </config-file>
 
-
+         <!--需匯入的類別-->
          <header-file src="src/ios/testPlugin.h" />
          <source-file src="src/ios/testPlugin.m" />
-                  
+         
+         <!--需匯入的檔案-->
+         <resource-file src="appbeep.wav" />
+         
+         <!--
+         //靜態庫
+         <source-file src="src/ios/libWikitudeSDK.a" framework="true" />
+         //客制的framework
+         <framework src="platforms/ios/FacebookSDK.framework" custom="true" />
+         //系統原生的framework
+         <framework src="libsqlite3.dylib" />
+         <framework src="Social.framework" weak="true" />
+         -->
      </platform>
-
-
 </plugin>

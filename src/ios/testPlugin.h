@@ -1,9 +1,12 @@
 #import <Cordova/CDVPlugin.h>
 
+
+//需繼承CDVPlugin
 @interface testPlugin : CDVPlugin
 
 
--(void)testJStoObjc:(CDVInvokedUrlCommand *)Command;
+//method需接收command
+-(void)testJStoObjc:(CDVInvokedUrlCommand *)command;
 
 
 @end
